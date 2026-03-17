@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# REPLACE: swap YOUR-PROJECT.pages.dev with your real URL
+Sitemap: https://YOUR-PROJECT.pages.dev/sitemap.xml

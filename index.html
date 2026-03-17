@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ░░ REPLACE: swap every occurrence of YOUR-PROJECT.pages.dev with your real Cloudflare Pages URL ░░ -->
+
+    <title>Free Online Image Converter — JPEG, PNG, WebP, AVIF | No Upload</title>
+    <meta name="description" content="Convert images between JPEG, PNG, WebP, AVIF and GIF instantly in your browser. No file uploads, no account, no watermarks. 100% private — your images never leave your device." />
+    <meta name="keywords" content="image converter, convert image online, JPEG to WebP, PNG to JPEG, WebP to PNG, AVIF converter, free image converter, no upload image converter, browser image converter, convert PNG to WebP, convert JPEG to AVIF, bulk image converter, image format converter" />
+    <meta name="author" content="Image Converter" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://YOUR-PROJECT.pages.dev/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://YOUR-PROJECT.pages.dev/" />
+    <meta property="og:title" content="Free Online Image Converter — JPEG, PNG, WebP, AVIF" />
+    <meta property="og:description" content="Convert images between any format instantly in your browser. No uploads, no tracking, no limits. Supports JPEG, PNG, WebP, AVIF, GIF, BMP, SVG and more." />
+    <meta property="og:image" content="https://YOUR-PROJECT.pages.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Image Converter" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://YOUR-PROJECT.pages.dev/" />
+    <meta name="twitter:title" content="Free Online Image Converter — No Upload Required" />
+    <meta name="twitter:description" content="Convert JPEG, PNG, WebP, AVIF images right in your browser. Nothing is uploaded to any server. Fast, private, free." />
+    <meta name="twitter:image" content="https://YOUR-PROJECT.pages.dev/og-image.png" />
+
+    <!-- Structured Data: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image Converter",
+      "url": "https://YOUR-PROJECT.pages.dev/",
+      "description": "A free, privacy-first image converter that runs entirely in your browser. Convert between JPEG, PNG, WebP, AVIF, and GIF with no file uploads and no server processing.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires a modern browser with Canvas API support",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Convert JPEG to WebP",
+        "Convert PNG to JPEG",
+        "Convert WebP to PNG",
+        "Convert images to AVIF",
+        "Batch image conversion",
+        "Adjustable quality for lossy formats",
+        "No file upload required",
+        "No account or registration",
+        "No watermarks",
+        "Works offline after first load"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage (feeds LLM citations and featured snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does this image converter upload my files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All conversion happens entirely inside your browser using the Canvas API. Your images are never sent to any server, making this one of the most private image converters available online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can convert to JPEG, PNG, WebP, AVIF, and GIF. Input formats include anything your browser can decode: JPEG, PNG, WebP, AVIF, GIF, BMP, ICO, SVG, and more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert multiple images at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Drop multiple files onto the converter or click to select them. Use 'Same format' mode to convert all images to one format in one click, or 'Individual' mode to choose a different format per image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is WebP and why should I convert to it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WebP is a modern image format developed by Google that produces files 25–35% smaller than JPEG at equivalent quality. It is ideal for web use and is supported by all major browsers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is AVIF and is it better than WebP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AVIF is a next-generation image format based on the AV1 video codec. It typically produces files 20% smaller than WebP at the same quality. Browser support is growing and it is the best format for reducing image file sizes today."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a file size or number of images limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No limits. Since processing happens in your browser, the only constraint is your device's available memory. Batch conversion processes up to 4 images concurrently to keep things fast."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this compare to FFmpeg for image conversion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FFmpeg is a powerful command-line tool that supports virtually every media format and codec. This converter handles the most common web image formats (JPEG, PNG, WebP, AVIF) directly in the browser with zero setup. For advanced use cases — RAW camera formats, HEIC, batch scripting, or video frame extraction — FFmpeg is the right tool."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
