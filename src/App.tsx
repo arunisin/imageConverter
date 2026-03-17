@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { DropZone } from './components/DropZone'
 import { FormatGrid } from './components/FormatGrid'
 import { QualitySlider } from './components/QualitySlider'
-import { FileRow } from './components/FileRow'
+import { FileRow, SizeBadge } from './components/FileRow'
 import { ImageEditor } from './components/ImageEditor'
 import { OUTPUT_FORMATS, isFormatSupported, type Format } from './lib/formats'
 import { convertImage, runWithConcurrency } from './lib/converters'
@@ -20,6 +20,7 @@ export interface FileEntry {
 }
 
 const DEFAULT_QUALITY = 92
+
 
 export default function App() {
   const [files, setFiles] = useState<FileEntry[]>([])
@@ -290,14 +291,19 @@ export default function App() {
                 <div className="batch-actions">
                   <p className="batch-actions__label">{doneFiles.length} file{doneFiles.length > 1 ? 's' : ''} ready</p>
                   {doneFiles.map((e) => (
-                    <a
-                      key={e.id}
-                      href={e.resultUrl}
-                      download={e.filename}
-                      className="btn btn--ghost btn--sm"
-                    >
-                      ↓ {e.filename}
-                    </a>
+                    <div key={e.id} className="batch-actions__item">
+                      <a
+                        href={e.resultUrl}
+                        download={e.filename}
+                        className="btn btn--ghost btn--sm"
+                      >
+                        ↓ {e.filename}
+                      </a>
+                      {e.resultSize != null && (
+                        <SizeBadge original={e.file.size} result={e.resultSize} />
+                      )}
+                      <button className="btn btn--ghost btn--sm" onClick={() => setEditingId(e.id)}>Edit</button>
+                    </div>
                   ))}
                 </div>
               )}

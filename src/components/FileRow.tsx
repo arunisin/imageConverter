@@ -1,9 +1,22 @@
 import type { FileEntry } from '../App'
 
-function formatBytes(bytes: number): string {
+export function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
   return `${(bytes / (1024 * 1024)).toFixed(2)} MB`
+}
+
+export function SizeBadge({ original, result }: { original: number; result: number }) {
+  const pct = Math.round(((result - original) / original) * 100)
+  const smaller = pct < 0
+  return (
+    <span className="file-row__size">
+      {formatBytes(result)}
+      <span className={smaller ? 'size-delta size-delta--smaller' : 'size-delta size-delta--larger'}>
+        {smaller ? pct : `+${pct}`}%
+      </span>
+    </span>
+  )
 }
 import { FormatGrid } from './FormatGrid'
 import { OUTPUT_FORMATS, type Format } from '../lib/formats'
@@ -58,7 +71,7 @@ export function FileRow({ entry, supported, onFormatSelect, onRemove, onEdit }: 
               ↓ {entry.filename}
             </a>
             {entry.resultSize != null && (
-              <span className="file-row__size">{formatBytes(entry.resultSize)}</span>
+              <SizeBadge original={entry.file.size} result={entry.resultSize} />
             )}
             <button className="btn btn--ghost btn--sm" onClick={() => onEdit(entry.id)}>Edit</button>
           </div>
