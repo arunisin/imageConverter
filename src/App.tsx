@@ -92,10 +92,10 @@ export default function App() {
     convertingRef.current = true
     setSameFormat(fmt)
 
-    // Mark eligible files as converting
+    // Mark eligible files as converting (include done so re-clicking reconverts with new quality)
     setFiles((prev) =>
       prev.map((e) =>
-        e.status === 'idle' || e.status === 'error'
+        e.status === 'idle' || e.status === 'error' || e.status === 'done'
           ? { ...e, status: 'converting', targetFormat: fmt }
           : e
       )
@@ -276,7 +276,7 @@ export default function App() {
               </div>
 
               {showQualitySlider && (
-                <QualitySlider value={quality} onChange={setQuality} />
+                <QualitySlider value={quality} onChange={setQuality} selectedFormat={sameFormat} />
               )}
 
               <FormatGrid

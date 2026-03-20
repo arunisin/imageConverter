@@ -350,6 +350,17 @@ body { margin: 0; }
   color: var(--text);
 }
 
+.quality-slider__note {
+  font-size: 0.72rem;
+  color: var(--text);
+  font-style: italic;
+}
+
+.quality-slider__range:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 /* ── Format grid ────────────────────────────────────── */
 .format-grid__wrapper {}
 
